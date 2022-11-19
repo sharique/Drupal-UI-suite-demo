@@ -1,0 +1,27 @@
+project:
+  machine_name: ui_suite_demo
+  prefix: UISD
+  human_name: 'UI Suite Demo'
+  profile:
+    name: minimal
+docroot: ${repo.root}/web
+validate:
+  twig:
+    filters:
+      - check_markup
+      - file_uri
+      - file_url
+      - token_replace
+      - view
+    functions:
+      - drupal_image
+      - drupal_block
+      - drupal_form
+  acsf: false
+  deprecation:
+    modules: true
+    theme: true
+git:
+  default_branch: master
+cm:
+  stratagy: core-only

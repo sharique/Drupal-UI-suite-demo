@@ -1,0 +1,20 @@
+uuid: f2ed9685-efd6-4133-8a44-631becf18753
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ui_suite_bootstrap
+_core:
+  default_config_hash: xSaeda3dAEypv-_pCOUbz3TZYG6U4j4ctTGolml7XhU
+id: ui_suite_bootstrap_local_actions
+theme: ui_suite_bootstrap
+region: sidebar_first
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,25 @@
+uuid: 4bb71785-05cf-4087-bbfb-eb7a3fba8823
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ui_suite_bootstrap
+_core:
+  default_config_hash: w9VwSZGhpE4vD6kczPhZwoIs8egP8D527joljs37Ovc
+id: ui_suite_bootstrap_branding
+theme: ui_suite_bootstrap
+region: header
+weight: -5
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

@@ -1,0 +1,27 @@
+uuid: beec881e-5303-40c6-9634-b72d01f84e8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - ui_suite_bootstrap
+_core:
+  default_config_hash: HcGDzN3c50R0HJX9jf_t0r72zw2xxLfmNMpj5Dl8R8g
+id: ui_suite_bootstrap_tools
+theme: ui_suite_bootstrap
+region: sidebar_first
+weight: -5
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

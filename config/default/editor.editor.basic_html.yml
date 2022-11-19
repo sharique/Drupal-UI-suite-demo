@@ -1,0 +1,42 @@
+uuid: eed60f12-7e0f-40b7-893a-ed1e12250f44
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - ckeditor5
+format: basic_html
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - bold
+      - italic
+      - removeFormat
+      - alignment
+      - link
+      - horizontalLine
+      - bulletedList
+      - numberedList
+      - '|'
+      - '-'
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_list:
+      reversed: true
+      startIndex: true
+    ckeditor5_alignment:
+      enabled_alignments:
+        - left
+        - center
+        - right
+        - justify
+image_upload: {  }
