@@ -23,5 +23,7 @@ validate:
     theme: true
 git:
   default_branch: master
+  remotes:
+    - git@bitbucket.org:user-_ppgpcpyskuywytatryy-w/demo-build.git
 cm:
   stratagy: core-only

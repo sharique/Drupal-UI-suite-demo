@@ -9,7 +9,6 @@ definitions:
   services:
     mysql:
       image: mariadb:latest
-
 pipelines:
   default:
     - step:
@@ -22,7 +21,7 @@ pipelines:
           # - pecl mysqli
           # - echo 'memory_limit = -1' > /usr/local/etc/php/php-cli.ini
           # - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-          - composer install
+          - COMPOSER_ALLOW_SUPERUSER=1 composer install
           - composer --version
         caches:
           - composer
@@ -31,10 +30,8 @@ pipelines:
             name: Validate
             script:
               - ls
-              - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-              - composer install
-              - blt validate
-              - vendor/bin/blt validate
+              # - COMPOSER_ALLOW_SUPERUSER=1 composer install
+              # - vendor/bin/blt validate
             caches:
               - composer
         - step:
@@ -46,6 +43,16 @@ pipelines:
     - step:
         name: Deploy to test
         deployment: test
-        trigger: manual  # Uncomment to make this a manual deployment.
+        # trigger: manual  # Uncomment to make this a manual deployment.
         script:
               - echo "Deploying to test environment"
+              - echo $BITBUCKET_REPO_FULL_NAME
+              - echo $BUILD_SSH_KEY
+              - apt-get update
+              - apt-get install openssh-client -y
+              - COMPOSER_ALLOW_SUPERUSER=1 composer install
+              - mkdir -p ~/.ssh
+              - echo "${BUILD_SSH_KEY}" > ~/.ssh/id_rsa.pub
+              - cat  ~/.ssh/id_rsa.pub
+              # - ssh-add  ~/.ssh/id_rsa.pub
+              - vendor/bin/blt artifact:deploy --commit-msg "$CI_COMMIT_TITLE" --branch "master" --ignore-dirty --ignore-platform-reqs --no-interaction --verbose

@@ -16,12 +16,18 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "path",
+            "url": "upstream-configuration"
         }
     ],
     "require": {
+        "php": "^8.0",
         "acquia/blt": "^13.6",
         "composer/installers": "^1.9",
         "drupal/admin_toolbar": "^3.2",
+        "drupal/component_blocks": "^1.2",
         "drupal/config_split": "^2.0",
         "drupal/core-composer-scaffold": "^9.4",
         "drupal/core-project-message": "^9.4",
@@ -36,9 +42,12 @@
         "drupal/ui_styles": "^1.2",
         "drupal/ui_suite_bootstrap": "5.0.x-dev@dev",
         "drupal/upgrade_status": "^3.17",
+        "drupal/wingsuit_companion": "^1.1",
         "drush/drush": "^11.3",
         "npm-asset/bootstrap": "^5.2",
-        "oomphinc/composer-installers-extender": "^2.0"
+        "oomphinc/composer-installers-extender": "^2.0",
+        "pantheon-systems/drupal-integrations": "^9.0",
+        "pantheon-upstreams/upstream-configuration": "*"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -60,12 +69,20 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
+            },
+            "allowed-packages": [
+                "pantheon-systems/drupal-integrations"
+            ],
+            "file-mapping": {
+                "[project-root]/.editorconfig": false,
+                "[project-root]/pantheon.upstream.yml": false,
+                "[project-root]/.gitattributes": false
             }
         },
         "installer-types": [
             "bower-asset",
             "npm-asset"
-          ],
+        ],
         "installer-paths": {
             "web/core": [
                 "type:drupal-core"
@@ -95,7 +112,10 @@
             ],
             "web/themes/custom/{$name}": [
                 "type:drupal-custom-theme"
-            ]
+            ],
+            "web/private/scripts/quicksilver/{$name}/": [
+                "type:quicksilver-script"
+              ]
         },
         "drupal-core-project-message": {
             "include-keys": [
