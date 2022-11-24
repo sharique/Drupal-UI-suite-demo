@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_components
+    - field.field.node.landing_page.layout_builder__layout
     - node.type.landing_page
   module:
     - paragraphs
@@ -87,4 +88,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  layout_builder__layout: true

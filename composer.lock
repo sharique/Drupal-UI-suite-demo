@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0845e35bdef1bdad5669196250b1a5f3",
+    "content-hash": "35d7e2f2376eecd8408fe9ec6f19c740",
     "packages": [
         {
             "name": "acquia/blt",
-            "version": "13.6.0",
+            "version": "13.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/acquia/blt.git",
-                "reference": "125dedb5c22c89765b65581647b2926069f50cb9"
+                "reference": "c6429b8052d03de7146dc93fefe5c69b96438d33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acquia/blt/zipball/125dedb5c22c89765b65581647b2926069f50cb9",
-                "reference": "125dedb5c22c89765b65581647b2926069f50cb9",
+                "url": "https://api.github.com/repos/acquia/blt/zipball/c6429b8052d03de7146dc93fefe5c69b96438d33",
+                "reference": "c6429b8052d03de7146dc93fefe5c69b96438d33",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,7 @@
                 "composer-runtime-api": "^2.0",
                 "consolidation/comments": "^1.0",
                 "consolidation/config": "^1.0.0 || ^2.0.0",
-                "consolidation/robo": "^3",
+                "consolidation/robo": "^3 || ^4",
                 "dflydev/dot-access-data": "^1.1.0 || ^2 || ^3",
                 "doctrine/annotations": "^1.10.0",
                 "drupal/core": "^9.0.0-alpha1 || ^10.0.0-alpha1",
@@ -95,9 +95,9 @@
             "support": {
                 "docs": "https://docs.acquia.com/blt/",
                 "issues": "https://github.com/acquia/blt/issues",
-                "source": "https://github.com/acquia/blt/tree/13.6.0"
+                "source": "https://github.com/acquia/blt/tree/13.7.0"
             },
-            "time": "2022-11-07T18:36:03+00:00"
+            "time": "2022-11-21T18:57:34+00:00"
         },
         {
             "name": "acquia/drupal-environment-detector",
@@ -503,16 +503,16 @@
         },
         {
             "name": "consolidation/annotated-command",
-            "version": "4.6.1",
+            "version": "4.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/annotated-command.git",
-                "reference": "76835d35fcb0b879170129e82adfa1536b72921f"
+                "reference": "423715c6c5156d007e6d3357f7793d9dad510cd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/76835d35fcb0b879170129e82adfa1536b72921f",
-                "reference": "76835d35fcb0b879170129e82adfa1536b72921f",
+                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/423715c6c5156d007e6d3357f7793d9dad510cd4",
+                "reference": "423715c6c5156d007e6d3357f7793d9dad510cd4",
                 "shasum": ""
             },
             "require": {
@@ -553,9 +553,9 @@
             "description": "Initialize Symfony Console commands from annotated command class methods.",
             "support": {
                 "issues": "https://github.com/consolidation/annotated-command/issues",
-                "source": "https://github.com/consolidation/annotated-command/tree/4.6.1"
+                "source": "https://github.com/consolidation/annotated-command/tree/4.7.0"
             },
-            "time": "2022-11-09T18:31:17+00:00"
+            "time": "2022-11-22T21:28:39+00:00"
         },
         {
             "name": "consolidation/comments",
@@ -3320,17 +3320,17 @@
         },
         {
             "name": "drupal/ui_patterns_settings",
-            "version": "1.1.0",
+            "version": "2.0.0-beta16",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ui_patterns_settings.git",
-                "reference": "8.x-1.1"
+                "reference": "8.x-2.0-beta16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ui_patterns_settings-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "153d1022b11479ea0f2d04e8d951823516a997af"
+                "url": "https://ftp.drupal.org/files/projects/ui_patterns_settings-8.x-2.0-beta16.zip",
+                "reference": "8.x-2.0-beta16",
+                "shasum": "13452494a456be2d4b00f051d38b8a3c52419bf3"
             },
             "require": {
                 "drupal/core": "^8 || ^9",
@@ -3340,17 +3340,21 @@
             "require-dev": {
                 "composer/installers": "^1.2",
                 "cweagans/composer-patches": "~1.4",
+                "drupal/colorwidget": "1.0.x-dev",
                 "drupal/config_devel": "~1",
                 "drupal/core-composer-scaffold": "^8.0",
                 "drupal/core-dev": "^8.0",
                 "drupal/core-recommended": "~9.0",
                 "drupal/ds": "~3",
-                "drupal/field_group": "~3",
+                "drupal/field_group": "3.x-dev@dev",
+                "drupal/media_library_form_element": "~2.0.3",
                 "drupal/page_manager": "*",
                 "drupal/panels": "~4",
                 "drupal/paragraphs": "~1",
                 "drupal/token": "~1",
                 "drupal/ui_patterns": "~1.2",
+                "drupal/ui_patterns_field_formatters": "^1.6",
+                "drupal/ui_patterns_layout_builder": "~1",
                 "drush/drush": "~10",
                 "openeuropa/task-runner": "~1.0-beta3",
                 "phpro/grumphp": "~0.14"
@@ -3358,11 +3362,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1600672196",
+                    "version": "8.x-2.0-beta16",
+                    "datestamp": "1664462563",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 },
                 "enable-patching": true,
@@ -3485,7 +3489,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ui_suite_bootstrap.git",
-                "reference": "0a48343f4ec47ad7de717200f0b27f934d53df03"
+                "reference": "e05978421e2317fd2b377f8c817da807cde5ee3f"
             },
             "require": {
                 "drupal/core": "^9 || ^10",
@@ -3502,8 +3506,8 @@
                     "dev-5.0.x": "5.0.x-dev"
                 },
                 "drupal": {
-                    "version": "5.0.0-alpha1+31-dev",
-                    "datestamp": "1667511982",
+                    "version": "5.0.0-alpha1+32-dev",
+                    "datestamp": "1669106519",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -3531,72 +3535,18 @@
             }
         },
         {
-            "name": "drupal/ui_suite_material",
-            "version": "2.0.0-alpha1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ui_suite_material.git",
-                "reference": "2.0.0-alpha1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ui_suite_material-2.0.0-alpha1.zip",
-                "reference": "2.0.0-alpha1",
-                "shasum": "90d4edb9987e09975e9d69b0ada8aa662106dec2"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9",
-                "drupal/layout_options": "^1.0@RC",
-                "drupal/ui_examples": "^1.0@beta",
-                "drupal/ui_patterns": "1.x",
-                "drupal/ui_patterns_settings": "^1.0@beta",
-                "drupal/ui_styles": "^1.0@beta"
-            },
-            "type": "drupal-theme",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.0-alpha1",
-                    "datestamp": "1664454149",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "pdureau",
-                    "homepage": "https://www.drupal.org/user/1903334"
-                }
-            ],
-            "description": "UI Suite Material",
-            "homepage": "https://www.drupal.org/project/ui_suite_material",
-            "keywords": [
-                "drupal",
-                "ui",
-                "web"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/ui_suite_material"
-            }
-        },
-        {
             "name": "drupal/upgrade_status",
-            "version": "3.17.0",
+            "version": "3.18.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/upgrade_status.git",
-                "reference": "8.x-3.17"
+                "reference": "8.x-3.18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/upgrade_status-8.x-3.17.zip",
-                "reference": "8.x-3.17",
-                "shasum": "b7961c580b48f5ad4e6b711fdf4283cc0063a5b9"
+                "url": "https://ftp.drupal.org/files/projects/upgrade_status-8.x-3.18.zip",
+                "reference": "8.x-3.18",
+                "shasum": "09a9c75603de8e5ce2254ce75603c00981d6f6d4"
             },
             "require": {
                 "drupal/core": "^8 || ^9",
@@ -3610,8 +3560,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.17",
-                    "datestamp": "1662479791",
+                    "version": "8.x-3.18",
+                    "datestamp": "1669215749",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5270,10 +5220,10 @@
         },
         {
             "name": "npm-asset/bootstrap",
-            "version": "5.2.2",
+            "version": "5.2.3",
             "dist": {
                 "type": "tar",
-                "url": "https://registry.npmjs.org/bootstrap/-/bootstrap-5.2.2.tgz"
+                "url": "https://registry.npmjs.org/bootstrap/-/bootstrap-5.2.3.tgz"
             },
             "type": "npm-asset",
             "license": [
@@ -11032,16 +10982,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.13.0",
+            "version": "1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "33aefcdab42900e36366d0feab6206e2dd68f947"
+                "reference": "aac44118344d197e6d5f7c6cee91885f0a89acdd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/33aefcdab42900e36366d0feab6206e2dd68f947",
-                "reference": "33aefcdab42900e36366d0feab6206e2dd68f947",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/aac44118344d197e6d5f7c6cee91885f0a89acdd",
+                "reference": "aac44118344d197e6d5f7c6cee91885f0a89acdd",
                 "shasum": ""
             },
             "require": {
@@ -11071,9 +11021,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.13.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.13.1"
             },
-            "time": "2022-10-21T09:57:39+00:00"
+            "time": "2022-11-20T08:52:26+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -13254,8 +13204,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/gin": 10,
-        "drupal/ui_suite_bootstrap": 20,
-        "drupal/ui_suite_material": 15
+        "drupal/ui_suite_bootstrap": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

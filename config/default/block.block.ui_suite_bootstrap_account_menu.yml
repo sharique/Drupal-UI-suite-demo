@@ -12,7 +12,7 @@ _core:
   default_config_hash: IOfo5ggbhg8D4aCRtT-rg1JUg020YVmLZMaeYn8XmJ0
 id: ui_suite_bootstrap_account_menu
 theme: ui_suite_bootstrap
-region: sidebar_second
+region: navigation
 weight: -5
 provider: null
 plugin: 'system_menu_block:account'
