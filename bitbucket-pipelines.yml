@@ -1,0 +1,51 @@
+# Template PHP Build
+
+# This template allows you to validate your PHP application.
+# The workflow allows running tests and code linting on the default branch.
+
+# image: bitnami/php-fpm:8.1
+image: hussainweb/drupal-base:php8.1
+definitions:
+  services:
+    mysql:
+      image: mariadb:latest
+
+pipelines:
+  default:
+    - step:
+        name: setup
+        script:
+          - echo 'setup ci'
+          # - apt-get update -yqq
+          # - apt-get install git -y
+          # Install PHP extensions
+          # - pecl mysqli
+          # - echo 'memory_limit = -1' > /usr/local/etc/php/php-cli.ini
+          # - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+          - composer install
+          - composer --version
+        caches:
+          - composer
+    - parallel:
+        - step:
+            name: Validate
+            script:
+              - ls
+              - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+              - composer install
+              - blt validate
+              - vendor/bin/blt validate
+            caches:
+              - composer
+        - step:
+            name: Lint
+            script:
+              - composer validate
+            caches:
+              - composer
+    - step:
+        name: Deploy to test
+        deployment: test
+        trigger: manual  # Uncomment to make this a manual deployment.
+        script:
+              - echo "Deploying to test environment"
