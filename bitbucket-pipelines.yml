@@ -54,5 +54,7 @@ pipelines:
               - mkdir -p ~/.ssh
               - echo "${BUILD_SSH_KEY}" > ~/.ssh/id_rsa.pub
               - cat  ~/.ssh/id_rsa.pub
+              - ssh-add -K ~/.ssh/id_rsa
+              - ssh-add -l 
               # - ssh-add  ~/.ssh/id_rsa.pub
               - vendor/bin/blt artifact:deploy --commit-msg "$CI_COMMIT_TITLE" --branch "master" --ignore-dirty --ignore-platform-reqs --no-interaction --verbose
