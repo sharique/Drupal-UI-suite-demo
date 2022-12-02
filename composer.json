@@ -42,12 +42,13 @@
         "drupal/ui_styles": "^1.2",
         "drupal/ui_suite_bootstrap": "5.0.x-dev@dev",
         "drupal/upgrade_status": "^3.17",
+        "drupal/we_megamenu": "^1.13",
         "drupal/wingsuit_companion": "^1.1",
         "drush/drush": "^11.3",
         "npm-asset/bootstrap": "^5.2",
         "oomphinc/composer-installers-extender": "^2.0",
         "pantheon-systems/drupal-integrations": "^9.0",
-        "pantheon-upstreams/upstream-configuration": "*"
+        "pantheon-upstreams/upstream-configuration": "dev-master"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -63,7 +64,11 @@
             "oomphinc/composer-installers-extender": true,
             "acquia/blt": true
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "platform": {
+            "php": "8.1"
+        }
     },
     "extra": {
         "drupal-scaffold": {
@@ -115,7 +120,7 @@
             ],
             "web/private/scripts/quicksilver/{$name}/": [
                 "type:quicksilver-script"
-              ]
+            ]
         },
         "drupal-core-project-message": {
             "include-keys": [
@@ -141,5 +146,16 @@
     },
     "require-dev": {
         "drupal/core-dev": "^9.4"
+    },
+    "scripts": {
+        "pre-update-cmd": [
+            "DrupalComposerManaged\\ComposerScripts::preUpdate"
+        ],
+        "upstream-require": [
+            "DrupalComposerManaged\\ComposerScripts::upstreamRequire"
+        ]
+    },
+    "scripts-descriptions": {
+        "upstream-require": "Add a dependency to an upstream. See https://pantheon.io/docs/create-custom-upstream for information on creating custom upstreams."
     }
 }

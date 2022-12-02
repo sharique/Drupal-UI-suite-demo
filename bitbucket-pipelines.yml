@@ -43,18 +43,20 @@ pipelines:
     - step:
         name: Deploy to test
         deployment: test
-        # trigger: manual  # Uncomment to make this a manual deployment.
+        trigger: manual  # Uncomment to make this a manual deployment.
         script:
               - echo "Deploying to test environment"
               - echo $BITBUCKET_REPO_FULL_NAME
               - echo $BUILD_SSH_KEY
               - apt-get update
-              - apt-get install openssh-client -y
+              - apt-get install openssh-client rsync -y
               - COMPOSER_ALLOW_SUPERUSER=1 composer install
               - mkdir -p ~/.ssh
               - echo "${BUILD_SSH_KEY}" > ~/.ssh/id_rsa.pub
               - cat  ~/.ssh/id_rsa.pub
-              - eval `ssh-agent -s` 
+              - eval `ssh-agent -s`
               - echo $SSH_AUTH_SOCK
+              - git config --global user.email "bitbucket@bitbasegroup.com"
+              - git config --global user.name "Deployment script"
               # - ssh-add  ~/.ssh/id_rsa.pub
               - vendor/bin/blt artifact:deploy --commit-msg "$CI_COMMIT_TITLE" --branch "master" --ignore-dirty --ignore-platform-reqs --no-interaction --verbose
