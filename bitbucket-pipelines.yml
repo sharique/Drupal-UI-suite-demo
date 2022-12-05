@@ -59,7 +59,7 @@ pipelines:
               #- git config --global user.email "bitbucket@bitbasegroup.com"
               #- git config --global user.name "Deployment script"
               - git config -l --show-origin
-              - git config --global user.email "mohamed.issaoui@bitbasegroup.com"
-              - git config --global user.name "mohamed issaoui"
+              - git config --global user.email "commits-noreply@bitbucket.org"
+              - git config --global user.name "bitbucket-pipelines"
               # - ssh-add  ~/.ssh/id_rsa.pub
               - vendor/bin/blt artifact:deploy --commit-msg "$CI_COMMIT_TITLE" --branch "master" --ignore-dirty --ignore-platform-reqs --no-interaction --verbose
