@@ -1,13 +1,8 @@
 {
-    "name": "drupal/recommended-project",
-    "description": "Project template for Drupal 9 projects with a relocated document root",
+    "name": "pantheon-upstreams/drupal-composer-managed",
+    "description": "Install Drupal 9 with Composer on Pantheon.",
     "type": "project",
-    "license": "GPL-2.0-or-later",
-    "homepage": "https://www.drupal.org/project/drupal",
-    "support": {
-        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
-        "chat": "https://www.drupal.org/node/314178"
-    },
+    "license": "MIT",
     "repositories": [
         {
             "type": "composer",
@@ -23,8 +18,8 @@
         }
     ],
     "require": {
-        "php": "^8.0",
         "acquia/blt": "^13.6",
+        "pantheon-upstreams/upstream-configuration": "dev-main",
         "composer/installers": "^1.9",
         "drupal/admin_toolbar": "^3.2",
         "drupal/component_blocks": "^1.2",
@@ -32,6 +27,9 @@
         "drupal/core-composer-scaffold": "^9.4",
         "drupal/core-project-message": "^9.4",
         "drupal/core-recommended": "^9.4",
+        "pantheon-systems/drupal-integrations": "^9",
+        "cweagans/composer-patches": "^1.7",
+        "drush/drush": "^11 || ^12",
         "drupal/devel": "^5.0",
         "drupal/ds": "^3.15",
         "drupal/field_group": "^3.4",
@@ -44,36 +42,21 @@
         "drupal/upgrade_status": "^3.17",
         "drupal/we_megamenu": "^1.13",
         "drupal/wingsuit_companion": "^1.1",
-        "drush/drush": "^11.3",
         "npm-asset/bootstrap": "^5.2",
-        "oomphinc/composer-installers-extender": "^2.0",
-        "pantheon-systems/drupal-integrations": "^9.0",
-        "pantheon-upstreams/upstream-configuration": "dev-master"
+        "oomphinc/composer-installers-extender": "^2.0"
+    },
+    "require-dev": {
+        "drupal/core-dev": "^9.4"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "config": {
-        "allow-plugins": {
-            "composer/installers": true,
-            "drupal/core-composer-scaffold": true,
-            "drupal/core-project-message": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "oomphinc/composer-installers-extender": true,
-            "acquia/blt": true
-        },
-        "sort-packages": true,
-        "preferred-install": "dist",
-        "platform": {
-            "php": "8.1"
-        }
-    },
     "extra": {
         "drupal-scaffold": {
             "locations": {
-                "web-root": "web/"
+                "web-root": "./web"
             },
             "allowed-packages": [
                 "pantheon-systems/drupal-integrations"
@@ -84,10 +67,6 @@
                 "[project-root]/.gitattributes": false
             }
         },
-        "installer-types": [
-            "bower-asset",
-            "npm-asset"
-        ],
         "installer-paths": {
             "web/core": [
                 "type:drupal-core"
@@ -122,30 +101,15 @@
                 "type:quicksilver-script"
             ]
         },
-        "drupal-core-project-message": {
-            "include-keys": [
-                "homepage",
-                "support"
-            ],
-            "post-create-project-cmd-message": [
-                "<bg=blue;fg=white>                                                         </>",
-                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
-                "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
-                "<bg=blue;fg=white>                                                         </>",
-                "",
-                "<bg=yellow;fg=black>Next steps</>:",
-                "  * Install the site: https://www.drupal.org/docs/8/install",
-                "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
-                "  * Get support: https://www.drupal.org/support",
-                "  * Get involved with the Drupal community:",
-                "      https://www.drupal.org/getting-involved",
-                "  * Remove the plugin that prints this message:",
-                "      composer remove drupal/core-project-message"
-            ]
+        "composer-exit-on-patch-failure": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
         }
     },
-    "require-dev": {
-        "drupal/core-dev": "^9.4"
+    "autoload": {
+        "classmap": [
+            "upstream-configuration/scripts/ComposerScripts.php"
+        ]
     },
     "scripts": {
         "pre-update-cmd": [
@@ -157,5 +121,21 @@
     },
     "scripts-descriptions": {
         "upstream-require": "Add a dependency to an upstream. See https://pantheon.io/docs/create-custom-upstream for information on creating custom upstreams."
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": false,
+        "platform": {
+            "php": "8.1"
+        },
+        "allow-plugins": {
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "drupal/core-composer-scaffold": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "acquia/blt": true,
+            "drupal/core-project-message": true,
+            "oomphinc/composer-installers-extender": true
+        }
     }
 }

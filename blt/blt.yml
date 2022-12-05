@@ -6,17 +6,6 @@ project:
     name: minimal
 docroot: ${repo.root}/web
 validate:
-  twig:
-    filters:
-      - check_markup
-      - file_uri
-      - file_url
-      - token_replace
-      - view
-    functions:
-      - drupal_image
-      - drupal_block
-      - drupal_form
   acsf: false
   deprecation:
     modules: true

@@ -75,6 +75,7 @@
 # .gitignore files placed by drupal/core-composer-scaffold to avoid
 # build errors that arise if non-ignored files are scaffolded.
 # ------------------------------------------------------------------
+/.editorconfig
 /.gitattributes
 
 # The pantheon-systems/drupal-integrations project places a
@@ -108,3 +109,4 @@ deployment_identifier
 .gitconfig
 web/themes/custom/*/node_modules
 web/themes/custom/*/.yarn
+.idea
